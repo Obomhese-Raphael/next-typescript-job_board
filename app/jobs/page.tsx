@@ -65,9 +65,13 @@ const Jobs = () => {
         handleSearch();
     };
 
-    const handleJobClick = (item: { id: any; }) => {
-        router.push(`/jobs/${item.id}`, { query: {item} })
-    }
+    // const handleJobClick = (item: { id: any; }) => {
+    //     router.push(`/jobs/${item.id}`, { query: {item} })
+    // };
+
+    const handleJobClick = (item: { id: any }) => {
+        router.push(`/jobs/${item.id}`);
+    };
 
     return (
         <div>
