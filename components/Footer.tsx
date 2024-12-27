@@ -9,7 +9,7 @@ import "../styles/Footer.css"
 const Footer = () => {
   return (
     <footer className='mx-10 mt-30 mb-10'>
-      <div className="container footer-container justify-between flex">
+      <div className="container footer-container justify-between flex sm:flex-col">
         <div className="left gap-5 flex flex-col">
           <Image
             src={"/logo.png"}

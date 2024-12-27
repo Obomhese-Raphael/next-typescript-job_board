@@ -3,6 +3,7 @@ import React from 'react';
 import { MdArrowForward } from "react-icons/md";
 import "../styles/Diff.css";
 import Employers from './Employers';
+import Link from 'next/link';
 
 const Diff = () => {
     return (
@@ -45,7 +46,7 @@ const Diff = () => {
                     <p className='text-xs text-gray-500'>Personalized filters make it quick and easy to find the jobs you care about.</p>
                 </div>
                 <div className="right">
-                    <button className='font-sans text-xs'><a href="/jobs">Search Jobs</a></button>
+                    <button className='font-sans text-xs'><Link href="/jobs">Search Jobs</Link></button>
                 </div>
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 xl:grid-cols-3 mx-16 my-10">

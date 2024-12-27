@@ -21,8 +21,8 @@ const Navbar: React.FC = () => {
         <div className="right">
           <ul>
             <li><Link href={"/"}>Home</Link></li>
-            <li><a href="/jobs">Jobs</a></li>
-            <li><a href="/login">Login</a></li>
+            <li><Link href="/jobs">Jobs</Link></li>
+            <li><Link href="/login">Login</Link></li>
             <Link href={"/signup"}><button className='sign-up'>Sign up</button></Link>
             <Link href={"/post"}><button className='post'>Post a job</button></Link>
           </ul>

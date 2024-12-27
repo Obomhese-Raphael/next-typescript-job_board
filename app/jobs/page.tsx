@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-require-imports */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
@@ -39,7 +40,6 @@ const Jobs = () => {
         };
 
         try {
-            // const response = await fetch(`https://linkedin-job-search-api.p.rapidapi.com/active-jb-7d?title_filter=${input}&location_filter=${locationInput}`, options);
             const response = await fetch(`https://active-jobs-db.p.rapidapi.com/active-ats-7d?title_filter=${input}&location_filter=${locationInput}`, options);
             const data = await response.json();
             console.log(data);
