@@ -1,0 +1,25 @@
+.diff .right button {
+  background: rgba(16, 3, 84, 0.705);
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 15px;
+  gap: 1px;
+  cursor: pointer;
+}
+.diff .right button:hover {
+  background: rgba(16, 3, 84, 1);
+  transition: background 0.3s ease-in-out;
+}
+.logo-wrapper {
+  position: relative;
+}
+
+.logo-wrapper:first-child {
+  margin-right: -10px; /* Adjust for overlap */
+}
+
+.jobberman {
+  margin-left: -10px; /* Adjust for overlap */
+}

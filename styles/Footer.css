@@ -1,0 +1,20 @@
+.footer-container .left {
+  text-align: justify;
+}
+
+.each-link .link:hover{
+  color: #5c5959;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.copyright{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #5c595c;
+}

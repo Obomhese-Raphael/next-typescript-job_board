@@ -1,0 +1,59 @@
+.navbar {
+  height: 60px;
+  width: 100%;
+  box-shadow: 0px 2px 5px #94b7be;
+}
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 50px;
+  align-items: center;
+  font-size: 13px;
+  text-align: center;
+  height: 100%;
+}
+.navbar-container .right ul {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  gap: 40px;
+}
+.navbar-container .right ul .sign-up {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  color: #000;
+  border-radius: 5px;
+  font-size: 12px;
+  gap: 1px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.navbar-container .right ul .post {
+  background: rgba(16, 3, 84, 0.705);
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 12px;
+  gap: 1px;
+  margin-left: -30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.navbar-container .right ul .post:hover {
+  background-color: rgba(58, 14, 109, 0.83);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+  .navbar-container .right ul .post {
+    display: none !important;
+  }
+  .navbar-container .right ul .sign-up{
+    padding: 4px 40px;
+    width: 100%;
+  }
+}
