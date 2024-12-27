@@ -26,28 +26,6 @@ const Jobs = () => {
     const [filteredJson, setFilteredJson] = useState([]);
     const [locationInput, setLocationInput] = useState("");
     const router = useRouter();
-
-    const fetchJobsData = async () => {
-        const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-
-        const options = {
-            method: "GET",
-            headers: {
-                accept: "application/json",
-                'x-rapidapi-key': apiKey,
-                'x-rapidapi-host': 'active-jobs-db.p.rapidapi.com'
-            }
-        };
-
-        try {
-            const response = await fetch(`https://active-jobs-db.p.rapidapi.com/active-ats-7d?title_filter=${input}&location_filter=${locationInput}`, options);
-            const data = await response.json();
-            console.log(data);
-            setResults(data);
-        } catch (error) {
-            console.error("Error fetching jobs:", error);
-        }
-    };
     const handleJsonLength = () => {
         setJsonLength(jsonLength + 10);
         setDisplayedJson(Math.min(displayedJson + 10, jsonData.length));
@@ -136,7 +114,7 @@ const Jobs = () => {
                                     </div>
                                 </div>
                                 <div className="mt-1 flex h-min items-center xl:mt-0 xl:bg-white xl:px-4 xl:py-[.16rem]">
-                                    <a href="" className='gap-x-2 font-medium items-center justify-center rounded-lg transition-colors focus:outline-none h-max text-gray-600 active:ring-0 focus:ring-0 focus:bg-gray-50 px-4 py-2.5 -ml-4 hidden text-sm xl:inline-flex'>Clear</a>
+                                    <span className='gap-x-2 font-medium items-center justify-center rounded-lg transition-colors focus:outline-none h-max text-gray-600 active:ring-0 focus:ring-0 focus:bg-gray-50 px-4 py-2.5 -ml-4 hidden text-sm xl:inline-flex'>Clear</span>
                                     <button
                                         className='inline-flex gap-x-2 font-medium items-center justify-center rounded-lg transition-colors focus:ring-4 focus:outline-none h-2/4 border border-transparent bg-primary-700 text-white hover:bg-primary-800 disabled:bg-primary-200 focus:ring-primary-100 text-sm py-3 px-5 w-full xl:w-max'
                                         onClick={handleSearch}
@@ -240,16 +218,16 @@ const Jobs = () => {
                                                 </div>
                                                 <div className="w-full flex-1">
                                                     <div className="mb-2 flex justify-between gap-x-4">
-                                                        <a href={item.url} className="text-sm font-medium text-gray-900 md:w-112 md:truncate">
+                                                        <Link href={item.url} className="text-sm font-medium text-gray-900 md:w-112 md:truncate">
                                                             {item.title}
-                                                        </a>
+                                                        </Link>
                                                         <span className="hidden text-xs flex-shrink-0 text-gray-600 md:block">
                                                             {item.date_posted}
                                                         </span>
                                                     </div>
                                                     <div className="mb-6 flex flex-col flex-wrap gap-y-2 md:flex-row md:gap-x-4">
                                                         <div className="flex gap-x-4">
-                                                            <a
+                                                            <Link
                                                                 href={item.organization_url}
                                                                 className="inline-flex text-xs items-center font-medium text-gray-900 gap-2"
                                                             >
@@ -257,7 +235,7 @@ const Jobs = () => {
                                                                 <button className="text-blue-700">
                                                                     <PiSealCheckFill />
                                                                 </button>
-                                                            </a>
+                                                            </Link>
                                                             {item.linkedin_org_size && (
                                                                 <p className="inline-flex text-xs items-center text-gray-600 gap-2">
                                                                     <MdPeopleOutline />
@@ -271,14 +249,14 @@ const Jobs = () => {
                                                                 <div className="inline-flex items-center border rounded-md font-medium w-max h-max text-xs px-2 py-0.5">
                                                                     {item.employment_type?.[0] || "Unknown"}
                                                                 </div>
-                                                                <a
+                                                                <Link
                                                                     href={item.organization_url}
                                                                     className="inline-flex items-center border rounded-md font-medium w-max h-max text-xs px-2 py-0.5 bg-white hover:bg-gray-50"
                                                                 >
                                                                     <span className="max-w-[11.25rem] truncate">
                                                                         {item.linkedin_org_industry || item.cities_derived?.[0] || "N/A"}
                                                                     </span>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                             <div className="flex items-center gap-2">
                                                                 <span className="sr-only">Sign up to save this job</span>
@@ -343,30 +321,30 @@ const Jobs = () => {
                         <div className="w-96 rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 flex cursor-default flex-col gap-y-6 md:hover:shadow-none">
                             <h2 className="mb-0 mt-0 text-lg font-medium text-gray-900 md:text-xl">Related Searches</h2>
                             <div className='flex text-xs flex-col gap-y-4'>
-                                <a href="" className='group flex items-center justify-between'>
+                                <Link href="" className='group flex items-center justify-between'>
                                     <span className='truncate md:max-w-[256px]'>Communication Skills</span>
-                                </a>
-                                <a href="" className='group flex items-center justify-between'>
+                                </Link>
+                                <Link href="" className='group flex items-center justify-between'>
                                     <span className='truncate md:max-w-[256px]'>Process Improvements</span>
-                                </a>
-                                <a href="" className='group flex items-center justify-between'>
+                                </Link>
+                                <Link href="" className='group flex items-center justify-between'>
                                     <span className='truncate md:max-w-[256px]'>Problem Solving</span>
-                                </a>
-                                <a href="" className='group flex items-center justify-between'>
+                                </Link>
+                                <Link href="" className='group flex items-center justify-between'>
                                     <span className='truncate md:max-w-[256px]'>API Integration</span>
-                                </a>
-                                <a href="" className='group flex items-center justify-between'>
+                                </Link>
+                                <Link href="" className='group flex items-center justify-between'>
                                     <span className='truncate md:max-w-[256px]'>Details Orientation</span>
-                                </a>
-                                <a href="" className='group flex items-center justify-between'>
+                                </Link>
+                                <Link href="" className='group flex items-center justify-between'>
                                     <span className='truncate md:max-w-[256px]'>SEO</span>
-                                </a>
-                                <a href="" className='group flex items-center justify-between'>
+                                </Link>
+                                <Link href="" className='group flex items-center justify-between'>
                                     <span className='truncate md:max-w-[256px]'>Entry Level digital marketing specialist</span>
-                                </a>
-                                <a href="" className='group flex items-center justify-between'>
+                                </Link>
+                                <Link href="" className='group flex items-center justify-between'>
                                     <span className='truncate md:max-w-[256px]'>Marketing</span>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
