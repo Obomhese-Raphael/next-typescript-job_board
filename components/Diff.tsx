@@ -50,7 +50,7 @@ const Diff = () => {
                 </div>
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 xl:grid-cols-3 mx-16 my-10">
-                <a href="">
+                <Link href="">
                     <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 md:hover:shadow-lg">
                         <div className="flex flex-wrap justify-between">
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full md:h-12 md:w-12 bg-blue-100">
@@ -68,8 +68,8 @@ const Diff = () => {
                             <p className='text-gray-500 text-xs'>Get awesome well paying developer job - <span className='font-semibold'>Fullstack Developer, Andriod or IOS Developer Jobs</span></p>
                         </div>
                     </div>
-                </a>
-                <a href="">
+                </Link>
+                <Link href="">
                     <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 md:hover:shadow-lg">
                         <div className="flex flex-wrap justify-between">
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full md:h-12 md:w-12 bg-blue-100">
@@ -87,8 +87,8 @@ const Diff = () => {
                             <p className='text-gray-500 text-xs'>Get awesome well paying sales job - <span className='font-semibold'>Sales Manager, Sales Representative, Sales Engineer Jobs</span></p>
                         </div>
                     </div>
-                </a>
-                <a href="">
+                </Link>
+                <Link href="">
                     <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 md:hover:shadow-lg">
                         <div className="flex flex-wrap justify-between">
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full md:h-12 md:w-12 bg-blue-100">
@@ -106,8 +106,8 @@ const Diff = () => {
                             <p className='text-gray-500 text-xs'>Get awesome well paying product management job - <span className='font-semibold'>Product Manager, Product Designer, Product Owner Jobs</span></p>
                         </div>
                     </div>
-                </a>
-                <a href="">
+                </Link>
+                <Link href="">
                     <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 md:hover:shadow-lg">
                         <div className="flex flex-wrap justify-between">
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full md:h-12 md:w-12 bg-blue-100">
@@ -125,8 +125,8 @@ const Diff = () => {
                             <p className='text-gray-500 text-xs'>Get awesome well paying marketing job - <span className='font-semibold'>Marketing Manager, Marketing Specialist, Advertising Jobs</span></p>
                         </div>
                     </div>
-                </a>
-                <a href="">
+                </Link>
+                <Link href="">
                     <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 md:hover:shadow-lg">
                         <div className="flex flex-wrap justify-between">
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full md:h-12 md:w-12 bg-blue-100">
@@ -144,8 +144,8 @@ const Diff = () => {
                             <p className='text-gray-500 text-xs'>Get awesome well paying design job - <span className='font-semibold'>UX/UI Designer, Graphic Designer, UI/UX Engineer Jobs</span></p>
                         </div>
                     </div>
-                </a>
-                <a href="">
+                </Link>
+                <Link href="">
                     <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 md:hover:shadow-lg">
                         <div className="flex flex-wrap justify-between">
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full md:h-12 md:w-12 bg-blue-100">
@@ -163,7 +163,7 @@ const Diff = () => {
                             <p className='text-gray-500 text-xs'>Get awesome well paying finance job - <span className='font-semibold'>Finance Manager, Finance Analyst, Accountant Jobs</span></p>
                         </div>
                     </div>
-                </a>
+                </Link>
             </div>
             <div className='mx-auto'>
                 <Employers />
