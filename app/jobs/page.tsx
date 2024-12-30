@@ -27,7 +27,7 @@ const Jobs = () => {
     const [locationInput, setLocationInput] = useState("");
     const router = useRouter();
     const searchParams = useSearchParams();
-    const searchTerm = searchParams.get('searchTerm');
+    const searchTerm = searchParams?.get('searchTerm');
     const handleJsonLength = () => {
         setJsonLength(jsonLength + 10);
         setDisplayedJson(Math.min(displayedJson + 10, jsonData.length));
@@ -43,16 +43,16 @@ const Jobs = () => {
             toast.success("Job added to favorites")
         }
     };
+
     const handleSearch = useCallback(() => {
-        const results = jsonData.filter((job: {
-            [x: string]: any; title: string; skills: string[]; location: any
-        }) =>
-            job.title.toLowerCase().includes(input.toLowerCase()) && job.locations_derived.some((location: string) =>
+        const filteredResults = jsonData.filter((job: { title: string; locations_derived: string[]; }) =>
+            job.title.toLowerCase().includes(input.toLowerCase()) &&
+            job.locations_derived.some((location: string) =>
                 location.toLowerCase().includes(locationInput.toLowerCase())
             )
         );
-        setFilteredJson(results);
-    }, [input, jsonData, locationInput]);
+        setFilteredJson(filteredResults);
+    }, [input, locationInput]);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
