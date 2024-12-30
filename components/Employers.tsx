@@ -21,7 +21,7 @@ const Employers = () => {
                             accusantium fugit iusto quibusdam facilis fugiat.
                         </p>
                         <button
-                            className='gap-x-2 font-medium items-center justify-center rounded-lg transition-colors focus:ring-4 focus:outline-none h-max border border-transparent bg-primary-700 text-white hover:bg-primary-800 text-sm py-3 px-5 hidden min-w-max mt-4 xl:block bg-primary-button'
+                            className='gap-x-2 font-medium items-center justify-center rounded-lg transition-colors focus:ring-4 focus:outline-none h-max border border-transparent bg-primary-700 text-white hover:bg-primary-800 text-sm py-3 px-5 hidden min-w-max mt-4 xl:block'
                         >
                             <Link href="/">Create Company Profile</Link>
                         </button>

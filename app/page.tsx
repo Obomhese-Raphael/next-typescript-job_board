@@ -10,7 +10,7 @@ const Home = () => {
       <div className="bg-gradient-to-r from-purple-800 to-purple-950 text-white py-16 text-center mx-2 rounded-xl">
         <h3 className='text-2xl md:text-3xl lg:text-4xl font-medium mb-4'>Over 10,000+ jobs to apply</h3>
         <p className='mb-8 max-w-xl mx-auto text-sm font-light px-5'>Empower your career journey. This is your starting point for discovering exceptional job opportunities that align with your skills, passions, and aspirations.</p>
-        <div className="flex items-center justify-between bg-white rounded text-gray-600 max-w-xl pl-4 sm:mx-auto">
+        <div className="flex items-center justify-between bg-white rounded text-gray-600 max-w-xl pl-4 sm:mx-auto sm:w-4/5 input-container">
           <div className="flex items-center">
             <CiSearch className='h-4 sm:h-5 text-black' />
             <input type="text" placeholder="Search for jobs" className="max-sm:text-xs p-2 rounded outline-none w-full" />

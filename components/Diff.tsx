@@ -50,7 +50,11 @@ const Diff = () => {
                 </div>
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 xl:grid-cols-3 mx-16 my-10">
-                <Link href="">
+                <Link
+                    href={{
+                        pathname: "/jobs",
+                        query: { searchTerm: "Software" }
+                    }}>
                     <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 md:hover:shadow-lg">
                         <div className="flex flex-wrap justify-between">
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full md:h-12 md:w-12 bg-blue-100">
@@ -69,7 +73,11 @@ const Diff = () => {
                         </div>
                     </div>
                 </Link>
-                <Link href="">
+                <Link
+                    href={{
+                        pathname: "/jobs",
+                        query: { searchTerm: "Sales" }
+                    }}>
                     <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 md:hover:shadow-lg">
                         <div className="flex flex-wrap justify-between">
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full md:h-12 md:w-12 bg-blue-100">
@@ -88,7 +96,11 @@ const Diff = () => {
                         </div>
                     </div>
                 </Link>
-                <Link href="">
+                <Link
+                    href={{
+                        pathname: "/jobs",
+                        query: { searchTerm: "Product" }
+                    }}>
                     <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 md:hover:shadow-lg">
                         <div className="flex flex-wrap justify-between">
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full md:h-12 md:w-12 bg-blue-100">
@@ -107,7 +119,11 @@ const Diff = () => {
                         </div>
                     </div>
                 </Link>
-                <Link href="">
+                <Link 
+                    href={{
+                        pathname: "/jobs",
+                        query: { searchTerm: "Marketing" }
+                    }}>
                     <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 md:hover:shadow-lg">
                         <div className="flex flex-wrap justify-between">
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full md:h-12 md:w-12 bg-blue-100">
@@ -126,7 +142,11 @@ const Diff = () => {
                         </div>
                     </div>
                 </Link>
-                <Link href="">
+                <Link 
+                    href={{
+                        pathname: "/jobs",
+                        query: { searchTerm: "Design" }
+                    }}>
                     <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 md:hover:shadow-lg">
                         <div className="flex flex-wrap justify-between">
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full md:h-12 md:w-12 bg-blue-100">
@@ -145,7 +165,11 @@ const Diff = () => {
                         </div>
                     </div>
                 </Link>
-                <Link href="">
+                <Link 
+                    href={{
+                        pathname: "/jobs",
+                        query: { searchTerm: "Finance" }
+                    }}>
                     <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 md:hover:shadow-lg">
                         <div className="flex flex-wrap justify-between">
                             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full md:h-12 md:w-12 bg-blue-100">

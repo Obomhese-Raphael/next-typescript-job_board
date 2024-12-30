@@ -21,7 +21,7 @@ const fetchJobsData = async () => {
 
 useEffect(() => {
     fetchJobsData();
-}, [])
+}, [fetchJobsData])
 
 
 

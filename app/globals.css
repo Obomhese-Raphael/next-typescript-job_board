@@ -31,3 +31,13 @@
   @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
 }
 /* END: Footer styles */
+
+
+/* Media Query */
+
+@media screen and (max-width: 768px) {
+  .input-container{
+    width: 90%;
+    margin: auto;
+  }
+}

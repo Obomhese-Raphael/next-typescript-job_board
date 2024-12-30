@@ -18,7 +18,7 @@
   align-items: center;
   flex-direction: row;
   list-style: none;
-  gap: 40px;
+  gap: 30px;
 }
 .navbar-container .right ul .sign-up {
   padding: 5px 10px;
@@ -37,8 +37,6 @@
   color: #fff;
   border-radius: 5px;
   font-size: 12px;
-  gap: 1px;
-  margin-left: -30px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -49,11 +47,18 @@
 /* Media Queries */
 
 @media screen and (max-width: 768px) {
+  .navbar{ 
+    width: 100%;
+  }
+  .navbar-container {
+    width: 100%;
+    padding: 0px 5px;
+  }
   .navbar-container .right ul .post {
     display: none !important;
   }
   .navbar-container .right ul .sign-up{
-    padding: 4px 40px;
+    /* padding: 4px 40px; */
     width: 100%;
   }
 }

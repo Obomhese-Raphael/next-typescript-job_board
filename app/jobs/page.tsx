@@ -4,7 +4,7 @@
 "use client"
 
 import Link from 'next/link';
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { IoFilter } from "react-icons/io5";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
@@ -14,7 +14,7 @@ import ResultsProps from '@/types';
 import { MdPeopleOutline } from "react-icons/md";
 import { IoStarOutline, IoStar } from "react-icons/io5";
 import { toast } from 'react-toastify';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 const Jobs = () => {
     const jsonData = require("../../test_2.json");
@@ -26,6 +26,8 @@ const Jobs = () => {
     const [filteredJson, setFilteredJson] = useState([]);
     const [locationInput, setLocationInput] = useState("");
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const searchTerm = searchParams.get('searchTerm');
     const handleJsonLength = () => {
         setJsonLength(jsonLength + 10);
         setDisplayedJson(Math.min(displayedJson + 10, jsonData.length));
@@ -41,7 +43,7 @@ const Jobs = () => {
             toast.success("Job added to favorites")
         }
     };
-    const handleSearch = () => {
+    const handleSearch = useCallback(() => {
         const results = jsonData.filter((job: {
             [x: string]: any; title: string; skills: string[]; location: any
         }) =>
@@ -50,8 +52,7 @@ const Jobs = () => {
             )
         );
         setFilteredJson(results);
-        console.log(results);
-    };
+    }, [input, jsonData, locationInput]);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
@@ -68,6 +69,13 @@ const Jobs = () => {
     const handleJobClick = (item: { id: any }) => {
         router.push(`/jobs/${item.id}`);
     };
+
+    useEffect(() => {
+        if (searchTerm) {
+            setInput(searchTerm as string);
+            handleSearch();
+        }
+    }, [searchTerm, handleSearch]);
 
     return (
         <div>
@@ -219,7 +227,9 @@ const Jobs = () => {
                                                 <div className="w-full flex-1">
                                                     <div className="mb-2 flex justify-between gap-x-4">
                                                         <Link href={item.url} className="text-sm font-medium text-gray-900 md:w-112 md:truncate">
-                                                            {item.title}
+                                                            <span>
+                                                                {item.title}
+                                                            </span>
                                                         </Link>
                                                         <span className="hidden text-xs flex-shrink-0 text-gray-600 md:block">
                                                             {item.date_posted}
@@ -287,7 +297,7 @@ const Jobs = () => {
                         </div>
                     </div>
                     <div className=" flex-col gap-y-6 group-has-[[data-pending]]/pending:flex gap-5 right-0">
-                        <div className="w-96 rounded-xl bg-gray-50 p-6">
+                        <div className="w-100% rounded-xl bg-gray-50 p-6">
                             <div className="inline-flex gap-x-2 font-medium items-center justify-center rounded-lg transition-colors focus:ring-4 focus:outline-none h-max disabled:text-gray-300 disabled:border-gray-100 border border-gray-200 shadow-xs bg-white text-gray-700 focus:ring-gray-100 p-3 mb-5 hover:bg-white hover:text-gray-700">
                                 <CiSearch />
                             </div>
@@ -318,7 +328,7 @@ const Jobs = () => {
                             <button className="inline-flex gap-x-2 font-medium items-center justify-center rounded-lg transition-colors focus:ring-4 focus:outline-none h-max border border-transparent bg-primary-700 text-white hover:bg-primary-800 disabled:bg-primary-200 focus:ring-primary-100 text-sm py-3 px-5 w-full">Sign up for free</button>
                         </div>
                         <div className="my-5"></div>
-                        <div className="w-96 rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 flex cursor-default flex-col gap-y-6 md:hover:shadow-none">
+                        <div className="w-100% rounded-xl border border-gray-200 bg-white p-5 shadow-xs transition-all ease-in-out md:p-6 flex cursor-default flex-col gap-y-6 md:hover:shadow-none">
                             <h2 className="mb-0 mt-0 text-lg font-medium text-gray-900 md:text-xl">Related Searches</h2>
                             <div className='flex text-xs flex-col gap-y-4'>
                                 <Link href="" className='group flex items-center justify-between'>
