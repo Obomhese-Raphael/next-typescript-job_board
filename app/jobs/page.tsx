@@ -78,7 +78,7 @@ const Jobs = () => {
     }, [searchTerm, handleSearch]);
 
     return (
-        <Suspense>
+        <Suspense fallback={<div>Loading jobs...</div>}>
             <div>
                 <div className="bg-gray-100">
                     <div className="container mx-auto px-4 w-5/6 pt-16 md:px-8">
