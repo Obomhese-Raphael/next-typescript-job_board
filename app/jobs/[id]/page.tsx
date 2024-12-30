@@ -185,9 +185,9 @@ const JobDetails = () => {
                                                 <span className="bg-blue-50 border border-blue-200 px-2 text-xs py-1 rounded">{job.employment_type}</span>
                                                 <span className="bg-red-50 border border-red-200 px-4 py-1.5 rounded overflow-hidden text-ellipsis whitespace-nowrap">{job.locations_derived[0]}</span>
                                             </div>
-                                            <p className="text-gray-500 text-sm mt-4">
+                                            <div className="text-gray-500 text-sm mt-5">
                                                 <p className='overflow-hidden text-ellipsis whitespace-nowrap'>{job.linkedin_org_description}</p>
-                                            </p>
+                                            </div>
                                             <div className="mt-4 flex gap-4 text-sm">
                                                 <button
                                                     onClick={() => handleApplyClick(job.id)}

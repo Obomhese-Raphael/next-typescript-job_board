@@ -4,10 +4,14 @@ import Link from 'next/link';
 import React from 'react';
 import { BsQuestionCircleFill } from "react-icons/bs";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight, MdOutlineError } from "react-icons/md";
+import { toast } from 'react-toastify';
 
 const Post = () => {
+  const handlePostSubmit = () => {
+    toast.success('Post submitted!');
+  };
   return (
-    <div className="box-border flex flex-col flex-grow flex-shrink home container 2xl:px-30 mx-auto my-10">
+    <form className="box-border flex flex-col flex-grow flex-shrink home container 2xl:px-30 mx-auto my-10">
       <div className="bg-gradient-to-r from-purple-800 to-purple-950 text-white py-16 text-center mx-20 rounded-xl">
         <div className="flex flex-row justify-center">
           <div className="px-3">
@@ -64,7 +68,7 @@ const Post = () => {
                   <span className="box-border m-0 min-w-0 text-red-700 font-bold">*</span>
                 </label>
                 <span className="box-border flex items-center justify-between relative z-0 rounded-lg border bg-white">
-                  <input type="text" className='box-border flex-grow m-0 rounded-lg cursor-text bg-transparent  text-xs font-sans font-normal tracking-normal leading-6 text-gray-800 px-3 py-2.5 min-h-[2.75rem] min-w-0' role='combobox' aria-autocomplete="both" aria-controls='listbox--:r1h' aria-expanded="false" autoComplete='on' maxLength={100} required placeholder='Company Name' />
+                  <input type="text" className='box-border flex-grow m-0 rounded-lg cursor-text bg-transparent  text-xs font-sans font-normal tracking-normal leading-6 text-gray-800 px-3 py-2.5 min-h-[2.75rem] min-w-0' role='combobox' aria-autocomplete="both" aria-controls='listbox--:r1h' aria-expanded="false" autoComplete='on' maxLength={100} required placeholder='Company Name' aria-required />
                 </span>
                 <div className="flex text-center items-center box-border my-0.5 mx-0 min-w-0 transition-opacity duration-200 ease-out">
                   <div className="flex text-center my-0.5 mx-0 min-w-0 transition-opacity duration-200 ease-out items-center text-rose-600 text-xs mt-2 leading-relaxed">
@@ -80,7 +84,7 @@ const Post = () => {
                   <span className="box-border m-0 min-w-0 text-red-700 font-bold">*</span>
                 </label>
                 <span className="box-border flex items-center justify-between relative z-0 rounded-lg border bg-white">
-                  <input type="text" className='box-border flex-grow m-0 rounded-lg cursor-text bg-transparent  text-xs font-sans font-normal tracking-normal leading-6 text-gray-800 px-3 py-2.5 min-h-[2.75rem] min-w-0' role='combobox' aria-autocomplete="both" aria-controls='listbox--:r1h' aria-expanded="false" autoComplete='on' maxLength={100} required placeholder='Company Name' />
+                  <input type="text" className='box-border flex-grow m-0 rounded-lg cursor-text bg-transparent  text-xs font-sans font-normal tracking-normal leading-6 text-gray-800 px-3 py-2.5 min-h-[2.75rem] min-w-0' role='combobox' aria-autocomplete="both" aria-controls='listbox--:r1h' aria-expanded="false" autoComplete='on' maxLength={100} required placeholder='Company Name' aria-required />
                 </span>
                 <div className="flex text-center items-center box-border my-0.5 mx-0 min-w-0 transition-opacity duration-200 ease-out">
                   <div className="flex text-center my-0.5 mx-0 min-w-0 transition-opacity duration-200 ease-out items-center text-rose-600 text-xs mt-2 leading-relaxed">
@@ -117,10 +121,11 @@ const Post = () => {
             <div className="box-border m-0 min-w-0 grid gap-8">
               <div className="flex box-border items-center my-0 max-[0.5rem] min-w-0 gap-2">
                 <div className="box-border items-center gap-3 m-0 w-full text-right">
-                  <Link href={"/"} className="flex relative items-center">
+                  <Link href={""} className="flex relative items-center">
                     <button
-                      type="submit"
+                      type="button"
                       className="box-border bg-gradient-to-r from-purple-800 to-purple-950 appearance-none text-start no-underline border-none cursor-pointer select-none flex items-center justify-center relative m-0 px-4 py-2 line-clamp-1 font-sans font-bold rounded-md transition-all duration-200 ease-in-out w-full min-h-[2.75rem] text-xs text-white"
+                      onClick={handlePostSubmit}
                     >
                       <span className="flex justify-center items-center">
                         <span>Continue</span>
@@ -134,7 +139,7 @@ const Post = () => {
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
